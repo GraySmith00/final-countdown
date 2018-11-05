@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NasaInfo msg="Welcome to daily NASA info!" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NasaInfo from './components/NasaInfo';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    NasaInfo
   }
-}
+};
 </script>
 
 <style>
