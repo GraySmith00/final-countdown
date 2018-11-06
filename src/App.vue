@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <NasaInfo msg="Welcome to daily NASA info!" />
+    <NasaInfo />
   </div>
 </template>
 

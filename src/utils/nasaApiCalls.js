@@ -4,6 +4,6 @@ export const nasaApiCall = async () => {
       process.env.VUE_APP_NASA_KEY
     }`
   );
-  const data = await response.json();
+  let data = await response.json();
   return data;
 };
