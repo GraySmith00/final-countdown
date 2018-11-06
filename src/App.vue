@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import NasaInfo from './components/NasaInfo';
+import NasaInfo from './components/NasaInfo/NasaInfo.vue';
 
 export default {
   name: 'app',

@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { nasaApiCall } from '../utils/nasaApiCalls';
+import { nasaApiCall } from '../../utils/nasaApiCalls';
 
 export default {
   name: 'NasaInfo',
@@ -31,7 +31,7 @@ export default {
     return {
       todayInfo: {},
       yesterdayInfo: {},
-      displayYesterday: true
+      displayYesterday: false
     };
   },
   async created() {
@@ -59,6 +59,7 @@ export default {
   color: #fff;
   padding: 2rem;
   border-radius: 10px;
+  box-shadow: 10px 10px 43px -12px rgba(0, 0, 0, 0.75);
 }
 .explanation {
   text-align: justify;
