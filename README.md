@@ -1,5 +1,7 @@
-# final-countdown
+# Final Countdown
 by Gray Smith
+
+- [Final Countdown](http://gsfinalcountdown.com.s3-website-us-east-1.amazonaws.com/) live on AWS
 
 <img src="https://i.imgur.com/2404iui.png" alt="screenshot" />
 
