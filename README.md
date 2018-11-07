@@ -1,4 +1,7 @@
 # final-countdown
+by Gray Smith
+
+<img src="https://i.imgur.com/2404iui.png" alt="screenshot" />
 
 ## Project setup
 ```
