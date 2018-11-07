@@ -110,18 +110,53 @@ export default {
 .buttons {
   margin-top: 2rem;
 }
-h3 {
-  margin: 40px 0 0;
+button {
+  padding: 0.7rem 1.3rem;
+  margin: 0 0.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: #fff;
+  -webkit-box-shadow: 6px 10px 45px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 10px 45px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 10px 45px -10px rgba(0, 0, 0, 0.75);
+  background: #ff416c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+button:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+@media screen and (max-width: 1200px) {
+  .nasa-info-inner {
+    width: 80%;
+  }
 }
-a {
-  color: #42b983;
+
+@media screen and (max-width: 700px) {
+  .nasa-info-inner {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 585px) {
+  .info-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+  .nasa-info-inner {
+    height: auto;
+  }
 }
 </style>
