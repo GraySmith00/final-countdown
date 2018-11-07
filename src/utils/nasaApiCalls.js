@@ -4,6 +4,7 @@ export const nasaApiCall = async date => {
       process.env.VUE_APP_NASA_KEY
     }&date=${date}`
   );
+
   let data = await response.json();
   return data;
 };

@@ -5,13 +5,13 @@
       <div class="nasa-info">
         <div v-if="!displayYesterday" class="today">
           <img :src="todayInfo.url" alt="nasa" width="200px"/>
-          <h3 class="date">{{ todayInfo.date }}</h3>
+          <h3 class="date">{{ formattedDate.today }}</h3>
           <p class="explanation">{{ todayInfo.explanation }}</p>
           <p class="copyright"><i class="far fa-copyright"></i> {{todayInfo.copyright}}</p>        
         </div>
         <div v-if="displayYesterday" class="yesterday">
           <img :src="yesterdayInfo.url" alt="nasa" width="200px"/>
-          <h3 class="date">{{ yesterdayInfo.date }}</h3>
+          <h3 class="date">{{ formattedDate.yesterday }}</h3>
           <p class="explanation">{{ yesterdayInfo.explanation }}</p>
           <p class="copyright"><i class="far fa-copyright"></i> {{yesterdayInfo.copyright}}</p>
         </div>  
@@ -24,6 +24,7 @@
 
 <script>
 import { nasaApiCall } from '../../utils/nasaApiCalls';
+import moment from 'moment';
 
 export default {
   name: 'NasaInfo',
@@ -31,15 +32,26 @@ export default {
     return {
       todayInfo: {},
       yesterdayInfo: {},
-      displayYesterday: false
+      displayYesterday: false,
+      formattedDate: {
+        today: moment().format('LL'),
+        yesterday: moment()
+          .subtract(1, 'days')
+          .format('LL')
+      }
     };
   },
   async created() {
-    let today = new Date().toISOString().slice(0, 10);
+    const today = moment()
+      .format()
+      .slice(0, 10);
     let todayData = await nasaApiCall(today);
     this.todayInfo = todayData;
 
-    let yesterday = new Date(Date.now() - 864e5).toISOString().slice(0, 10);
+    let yesterday = moment()
+      .subtract(1, 'days')
+      .format()
+      .slice(0, 10);
     let yesterdayData = await nasaApiCall(yesterday);
     this.yesterdayInfo = yesterdayData;
   }
