@@ -1,4 +1,4 @@
-const mockApiCall = {
+export const mockApiCall = {
   copyright: 'Bray Falls',
   date: '2018-11-06',
   explanation:
